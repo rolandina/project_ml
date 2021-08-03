@@ -18,9 +18,12 @@ app = FastAPI(title="Titanic")
 async def prediction(pclass: int, sex: int, age: float, sibsp: int, fare: float, embarked: int):
     
     d = Data()
-    text_result = d.prediction(d.create_X_prediction(pclass,sex,age,sibsp,fare,embarked))
-    return {'answer': text_result}
+    m = Model()
+    res = m.prediction(d.create_X_prediction(pclass,sex,age,sibsp,fare,embarked))
+    #return {'answer': text_result}
+    return [{f"result: {res}, result_text:{} probability:{text_result}, description:{text_result}"}]
 
 #@app.get("/model_description/")
 #@app.get("/raw_data/") #????
+
 
