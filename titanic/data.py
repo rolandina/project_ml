@@ -26,6 +26,7 @@ class Data:
         ## 1 = True; 0 = False 
         df['alone'] = df['alone'].replace([True, False], [1,0])
         df['sex'] = df['sex'].replace(['male', 'female'], [1,0])
+        df['embarked'] = df['embarked'].replace([np.nan], [df['embarked'].mode()])
         df['embarked'] = df['embarked'].replace(['C', 'Q', 'S'], [0,1,2])
         df['age'] = df['age'].replace(np.nan, np.mean(df[df['age']>15]['age']))
         return df
