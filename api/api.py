@@ -5,10 +5,10 @@ from fastapi import HTTPException
 import uvicorn
 import pandas as pd
 import json
-from titanic.data import Data
+
 from titanic.model import Model
 from enum import Enum
-from sklearn.linear_model import LogisticRegression
+
 
 app = FastAPI(title="Titanic")
 
@@ -37,23 +37,60 @@ class Pclass(str, Enum):
     return the answer if passager died or survived",
 )
 async def prediction(pclass: Pclass, sex: Sex, age: float, sibsp: int, fare: float, embarked: Embarked):
-    
-    d = Data()
-    X_train, X_test, y_train, y_test = d.get_prepared_data()
-    m = Model(LogisticRegression(), {'max_iter': 1000})
-    m.fit_model(X_train, y_train)
-    return m.predict(d.create_X_prediction(pclass,sex,age,sibsp,fare,embarked))
+
+    m = Model()
+    return m.predict(m.create_X_prediction(pclass,sex,age,sibsp,fare,embarked))
     
 
 
-@app.get("/model_description/")
+@app.get("/model_description/",
+        response_description = """{
+  "model": "LogisticRegression",
+  "params": {
+    "C": 1,
+    "class_weight": null,
+    "dual": false,
+    "fit_intercept": true,
+    "intercept_scaling": 1,
+    "l1_ratio": null,
+    "max_iter": 1000,
+    "multi_class": "auto",
+    "n_jobs": null,
+    "penalty": "l2",
+    "random_state": null,
+    "solver": "lbfgs",
+    "tol": 0.0001,
+    "verbose": 0,
+    "warm_start": false
+  }
+}""",
+        description = "Returns name and the parameters of the model to use in prediction."
+        )
 async def description():
-    d = Data()
-    X_train, X_test, y_train, y_test = d.get_prepared_data()
-    m = Model(LogisticRegression(), {'max_iter': 1000})
-    m.fit_model(X_train, y_train)
+    m = Model()
     return m.get_model()
-    
-#@app.get("/raw_data/") #????
 
+
+@app.get("/list_models/",
+        response_description = """{
+  "models": [
+    "LogisticRegression",
+    "DecisionTreeClassifier",
+    "KNeighborsClassifier"
+  ]
+}
+""",
+        description = "Returns list of models ready to use for titanic data set"
+        )
+async def list_all_models():
+    m = Model()
+    return m.get_models_list()
+    
+
+@app.get("/raw_data/",
+        response_description = "pandas data frame in json format",
+        description = "Returns data frame titanic in json format."
+        )
+async def get_raw_data():
+    return Model().titanic.to_json(orient= 'columns')
 
