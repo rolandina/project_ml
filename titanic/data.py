@@ -8,6 +8,7 @@ from sklearn.model_selection import train_test_split
 class Data:
     def __init__(self):
         self.titanic = self.__load_data_titanic()
+        self.X_train, self.X_test, self.y_train, self.y_test = self.get_prepared_data()
 
     def get_prepared_data(self):
         """return X_train, X_test, y_train, y_test prepared for the model"""
