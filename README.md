@@ -28,6 +28,21 @@ git clone http://github.com/rolandina
 cd dirname
 # python run.py
 ```
+
+To create image titanic-fastapi
+
+```docker
+docker-compose build
+```
+
+
+To run container on laptop
+```docker
+docker run -d --name titanic-fastapi -p 8080:8000 titanic-fastapi
+```
+adress - 0.0.0.0:8080
+
+
 ## Contributing
 
 This project was built on another project/[framework](framework link)

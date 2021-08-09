@@ -1,10 +1,4 @@
-from typing import Optional
-from fastapi import FastAPI, Path
-from pydantic import BaseModel
-from fastapi import HTTPException
-import uvicorn
-import pandas as pd
-import json
+from fastapi import FastAPI, Path, HTTPException
 
 from titanic.model import Model
 from enum import Enum
