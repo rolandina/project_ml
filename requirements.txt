@@ -1,5 +1,6 @@
 pandas
 numpy
-requests
-setuptools
-json
+fastapi
+uvicorn
+scikit-learn
+seaborn
