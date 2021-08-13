@@ -1,7 +1,12 @@
 from fastapi import FastAPI, Path, HTTPException
+#import uvicorn
+#import os
 
 from titanic.model import Model
 from enum import Enum
+
+# load environment variables
+#port = os.environ["PORT"]
 
 
 app = FastAPI(title="Titanic")
@@ -88,3 +93,6 @@ async def list_all_models():
 async def get_raw_data():
     return Model().titanic.to_json(orient= 'columns')
 
+
+# if __name__=='__main__':
+#     uvicorn.run("api:app", host="0.0.0.0", port = port, reload=False)

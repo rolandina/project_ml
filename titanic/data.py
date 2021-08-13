@@ -57,6 +57,3 @@ class Data:
         X_prediction.alone = 1 if sibsp > 1 else 0
     
         return self.__preprocessing(X_prediction)
-
-
-

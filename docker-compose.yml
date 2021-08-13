@@ -3,4 +3,4 @@ version: '2'
 services:
   titanic-fastapi:
     build: .
-    image: titanic-fastapi
+    image: rolandina/titanic-fastapi
