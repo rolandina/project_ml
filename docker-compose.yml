@@ -1,6 +1,6 @@
 version: '2'
 
 services:
-  titanic-fastapi:
+  titanicfastapi:
     build: .
-    image: rolandina/titanic-fastapi
+    image: titanicfastapi.azurecr.io/titanicfastapi
