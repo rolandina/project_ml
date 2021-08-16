@@ -7,13 +7,12 @@
 </head>
 <body>
 	<form action="" class="container">
-		<h2>Titanic Prediction </h2>
+		<h2>Titanic Survival Prediction </h2>
 
 		<div class="row100">
 			<div class="col">
-				<label for="cars">Pclass:</label>
+				<label for="cars">Pclass</label>
 				<select class="inputBox">
-					<option value="">Select a class</option>
 					<option value="">1</option>
 					<option value="">2</option>
 					<option value="">3</option>
@@ -21,9 +20,8 @@
 			</div>
 
 			<div class="col">
-				<label for="cars">Sex:</label>
+				<label for="cars">Sex</label>
 				<select class="inputBox">
-					<option value="">Select the gender</option>
 					<option value="">Male</option>
 					<option value="">Female</option>
 				</select>
@@ -32,32 +30,14 @@
 
 		<div class="row100">
 			<div class="col">
-				<label for="cars">Sex:</label>
+				<label for="cars">Age</label>
 				<div class="inputBox">
 					<input type="text" name="" required="required">
 				</div>
 			</div>
 			<div class="col">
-				<div class="inputBox">
-					<input type="text" name="" required="required">
-					<span class="text">Sibsp</span>
-					<span class="line"></span>
-				</div>
-			</div>
-		</div>
-
-		<div class="row100">
-			<div class="col">
-				<div class="inputBox">
-					<input type="text" name="" required="required">
-					<span class="text">Fare</span>
-					<span class="line"></span>
-				</div>
-			</div>
-			<div class="col">
-				<label for="cars">Embarded:</label>
+				<label for="cars">Embarded</label>
 				<select class="inputBox">
-					<option value="">Select the gender</option>
 					<option value="">Q</option>
 					<option value="">S</option>
 					<option value="">C</option>
@@ -67,10 +47,28 @@
 
 		<div class="row100">
 			<div class="col">
-				<input type="submit" value="send">
+				<label for="cars">Fare</label>
+				<div class="inputBox">
+					<input type="text" name="" required="required">
+				</div>
+			</div>
+			<div class="col">
+				<label for="cars">Sibsp</label>
+				<div class="inputBox">
+					<span id="rangeValue">0</span>
+					<input type="range" min="0" max="10" onchange=rangeSlide(this.value) value="5" id="slider">
+				</div>
+			</div>
+		</div>
+
+		<div class="row100">
+			<div class="col">
+				<input type="submit" value="Predict Survival">
 			</div>
 		</div>
 </form>
 
 </body>
+
+<script src="script.js"></script>
 </html>

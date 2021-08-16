@@ -30,6 +30,7 @@ body {
 	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	color: #F4D03F;
 }
 
 .container .row100 .col {
@@ -44,52 +45,34 @@ body {
 	position: relative;
 	width: 100%;
 	height: 40px;
-	color: #F4D03F;
+	color: #000;
+	font-size: 15px;
 }
 
-.container .row100 .inputBox input {
+.container .row100 .inputBox input, select {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: transparent;
-	box-shadow: none;
-	border: none;
-	outline: none;
+	background:  #F4D03F;
 	font-size: 18px;
 	padding: 0 10px;
 	z-index: 1;
-	color: #000;
 }
-.container .row100 .inputBox .text {
-	position: absolute;
-	top: 0;
-	left: 0;
-	line-height: 40px;
-	font-size: 18px;
-	padding: 0 10px;
+
+#rangeValue {
+	position: relative;
 	display: block;
-	transition: 0.5s;
-	pointer-events: none;
+	text-align: center;
+	color: #F4D03F;
+	font-weight: 700;
+	font-size: 20px;
 }
-.container .row100 .inputBox input:focus + .text,
-.container .row100 .inputBox input:valid + .text {
-	top: -35px;
-	left: -10px;
-} 
-.container .row100 .inputBox .line {
-	position: absolute;
-	bottom: 0;
-	display: block;
-	width: 100%;
-	height: 2px;
-	background: #F4D03F;
-	transition: 0.5s;
-	border-radius: 2px;
-	pointer-events: none;
-}
-.container .row100 .inputBox input:focus ~ .line,
-.container .row100 .inputBox input:valid ~ .line {
-	height: 100%;
+
+#slider {
+	-webkit-appearance: none;
+	color: #F4D03F;
+	border-radius: 50px;
+	height: 20px;
 }
 
 input[type="submit"] {
