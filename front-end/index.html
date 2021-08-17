@@ -4,69 +4,75 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Titanic</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-	<form action="" class="container">
-		<h2>Titanic Survival Prediction </h2>
+	<div class='container'>
+		<form action="" class="container">
+			<h2>Titanic Survival Prediction </h2>
 
-		<div class="row100">
-			<div class="col">
-				<label for="cars">Pclass</label>
-				<select class="inputBox">
-					<option value="">1</option>
-					<option value="">2</option>
-					<option value="">3</option>
-				</select>
-			</div>
+			<div class="row100">
+				<div class="col">
+					<label for="pclass">Pclass</label>
+					<select class="inputBox"id='pclass'>
+						<option>1</option> 
+						<option>2</option>
+						<option>3</option>
+					</select>
+				</div>
 
-			<div class="col">
-				<label for="cars">Sex</label>
-				<select class="inputBox">
-					<option value="">Male</option>
-					<option value="">Female</option>
-				</select>
-			</div>
-		</div>
-
-		<div class="row100">
-			<div class="col">
-				<label for="cars">Age</label>
-				<div class="inputBox">
-					<input type="text" name="" required="required">
+				<div class="col">
+					<label for="sex">Sex</label>
+					<select class="inputBox" id ='sex'>
+						<option>male</option>
+						<option>female</option>
+					</select>
 				</div>
 			</div>
-			<div class="col">
-				<label for="cars">Embarded</label>
-				<select class="inputBox">
-					<option value="">Q</option>
-					<option value="">S</option>
-					<option value="">C</option>
-				</select>
-			</div>
-		</div>
 
-		<div class="row100">
-			<div class="col">
-				<label for="cars">Fare</label>
-				<div class="inputBox">
-					<input type="text" name="" required="required">
+			<div class="row100">
+				<div class="col">
+					<label for="age">Age</label>
+					<div class="inputBox">
+						<input required="required" value = '18' id='age'>
+					</div>
+				</div>
+				<div class="col">
+					<label for="embarked">Embarked</label>
+					<select class="inputBox" id='embarked'>
+						<option>Q</option>
+						<option>S</option>
+						<option>C</option>
+					</select>
 				</div>
 			</div>
-			<div class="col">
-				<label for="cars">Sibsp</label>
-				<div class="inputBox">
-					<span id="rangeValue">0</span>
-					<input type="range" min="0" max="10" onchange=rangeSlide(this.value) value="5" id="slider">
+
+			<div class="row100">
+				<div class="col">
+					<label for="cars">Fare</label>
+					<div class="inputBox">
+						<input value='35' required="required" id='fare'>
+					</div>
+				</div>
+				<div class="col">
+					<label for="sibsp">Sibsp</label>
+					<div class="inputBox">
+						<span id="rangeValue">0</span>
+						<input type="range" min="0" max="10"  value="0" onchange="rangeSlide(this.value)" id="sibsp">	
+					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="row100">
-			<div class="col">
-				<input type="submit" value="Predict Survival">
+			<div class="row100">
+				<div class="col">
+					<button type="submit" id='resultbutton'>Predict Survival</button>
+				</div>
 			</div>
-		</div>
-</form>
+		</form>
+		<h2 style="color:red;" id="result"></h2>
+	</div>
+
+
 
 </body>
 
