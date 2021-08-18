@@ -1,4 +1,4 @@
-# *_TITANIC_* 
+# **TITANIC** 
 ![](https://github.com/rolandina/titanic/blob/master/front-end/img/1.jpeg)
 
 Project Titanic is a responsive site based on FastApi deployd on Azure Cloud for prediction of the survaval of the passanger of Titanic. 
@@ -37,7 +37,7 @@ We took our data with passangers from [seaborn dataset 'titanic'](https://seabor
 **Other files**:
 
 * [.gitignore](https://github.com/rolandina/titanic/blob/master/.gitignore)
-* [README.md](https://github.com/rolandina/titanic/blob/master/README.md) current markdwoen ReadMe file
+* [README.md](https://github.com/rolandina/titanic/blob/master/README.md) current markdown ReadMe file
 * [requirements.txt](https://github.com/rolandina/titanic/blob/master/requirements.txt)
 * [Makefile](https://github.com/rolandina/titanic/blob/master/Makefile)
   
