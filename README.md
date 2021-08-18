@@ -77,7 +77,7 @@ Address on local host to access fast api titanic after running docker container 
 
 ## Links on API and Site
 
-[Titanic FastAPI](titanicfastapi.azurecr.io/titanicfastapi) - the link on webApp with FastApi deployed on Azure (which probably will not be working by the time you are reading it).
+[Titanic FastAPI](https://titanicfastapi.azurewebsites.net/docs) - the link on webApp with FastApi deployed on Azure (which probably will not be working by the time you are reading it).
 
 
 [Titanic Survaval Prediction](https://rolandina.github.io/site_titanic/) - the link on the site deployed on [GitHubPages](https://pages.github.com/) (the site uses the fast api above, so it will not be working as well once the project is finished).
