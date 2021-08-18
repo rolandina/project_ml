@@ -1,12 +1,7 @@
 # *_TITANIC_* 
 
-Project Titanic is a study project where 
-## *What is does*
-
-PROGRAM is a python/c++/c/html/ipython notebook which makes/solve/consists
-what is a goal
-input
-output 
+Project Titanic is a responsive site based on FastApi deployd on Azure Cloud for prediction of the survaval of the passanger of Titanic. 
+We took our data with passangers from [seaborn dataset 'titanic'](https://seaborn.pydata.org/generated/seaborn.load_dataset.html).
 
 ### Structure of the Project
 
@@ -58,33 +53,50 @@ pip install .
 
 ## Create Docker image and deploy api on Azure
 
-```docker
-#create docker image
-docker-compose build
+To create docker image:
 
-#access to the azure registry
+```
+docker-compose build
+```
+
+To access to the azure registry:
+
+```
 docker login titanicfastapi.azurecr.io/titanicfastapi
-#---> enter the password
 docker push titanicfastapi.azurecr.io/titanicfastapi
 ```
 
 To run container with fast api on the laptop:
-`docker run -d --name titanic-fastapi -p 8080:8000 titanicfastapi.azurecr.io/titanicfastapi`
-address on local host to access fast api titanic after running docker container `0.0.0.0:8080`
+
+```
+docker run -d --name titanic-fastapi -p 8080:8000 titanicfastapi.azurecr.io/titanicfastapi
+```
+
+Address on local host to access fast api titanic after running docker container `0.0.0.0:8080`
+
+
+## Links on API and Site
+
+[Titanic FastAPI](titanicfastapi.azurecr.io/titanicfastapi) - the link on webApp with FastApi deployed on Azure (which probably will not be working by the time you are reading it).
+
+
+[Titanic Survaval Prediction](https://rolandina.github.io/site_titanic/) - the link on the site deployed on [GitHubPages](https://pages.github.com/) (the site uses the fast api above, so it will not be working as well once the project is finished).
+
+
 
 
 ## Contributing
 
-To create this project we used several libraries and services:
-To run fast api we used:
+To create this project we have used several libraries and services:
+To run fast api we've used:
 
 * [FastApi](https://fastapi.tiangolo.com/)
 * [gunicorn](https://gunicorn.org/)
 * [Docker](https://www.docker.com/)
   
-To deploy fast api on cloud we used [Azure Portal](https://portal.azure.com/#home).
+To deploy fast api on cloud we've used [Azure Portal](https://portal.azure.com/#home).
 
-To create a responsive site we used [jQuery](https://gunicorn.org/).
+To create a responsive site we've used [jQuery](https://gunicorn.org/).
 
 ## Contacts
 If you have any questions you are welcome to contact us:
