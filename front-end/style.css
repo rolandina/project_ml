@@ -66,13 +66,14 @@ body {
 	color: #F4D03F;
 	font-weight: 700;
 	font-size: 20px;
+	padding-bottom: 6px;
 }
 
-#slider {
+#sibsp{
 	-webkit-appearance: none;
-	color: #F4D03F;
-	border-radius: 50px;
-	height: 20px;
+	color: #000000;
+
+	height: 8px;
 }
 
 input[type="submit"] {
@@ -86,7 +87,10 @@ input[type="submit"] {
 	border-radius: 2px;
 }
 
-
+#result {
+	color:#F4D03F;
+	text-align: center;
+}
 
 
 

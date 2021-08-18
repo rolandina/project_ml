@@ -7,13 +7,13 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-	<div class='container'>
+	<!-- <div class='container'> -->
 		<form action="" class="container">
 			<h2>Titanic Survival Prediction </h2>
 
 			<div class="row100">
 				<div class="col">
-					<label for="pclass">Pclass</label>
+					<label for="pclass">Fare Class</label>
 					<select class="inputBox"id='pclass'>
 						<option>1</option> 
 						<option>2</option>
@@ -55,7 +55,7 @@
 					</div>
 				</div>
 				<div class="col">
-					<label for="sibsp">Sibsp</label>
+					<label for="sibsp">Number of Siblings</label>
 					<div class="inputBox">
 						<span id="rangeValue">0</span>
 						<input type="range" min="0" max="10"  value="0" onchange="rangeSlide(this.value)" id="sibsp">	
@@ -65,12 +65,13 @@
 
 			<div class="row100">
 				<div class="col">
-					<button type="submit" id='resultbutton'>Predict Survival</button>
+					<input type="submit" id='resultbutton'>
 				</div>
 			</div>
+			<h2 id="result"></h2>
 		</form>
-		<h2 style="color:red;" id="result"></h2>
-	</div>
+	
+	<!-- </div> -->
 
 
 
