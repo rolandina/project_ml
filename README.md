@@ -1,4 +1,5 @@
 # *_TITANIC_* 
+![](https://github.com/rolandina/titanic/blob/master/front-end/img/1.jpeg)
 
 Project Titanic is a responsive site based on FastApi deployd on Azure Cloud for prediction of the survaval of the passanger of Titanic. 
 We took our data with passangers from [seaborn dataset 'titanic'](https://seaborn.pydata.org/generated/seaborn.load_dataset.html).
