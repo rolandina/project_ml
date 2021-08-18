@@ -1,5 +1,6 @@
 # *_TITANIC_* 
 
+Project Titanic is a study project where 
 ## *What is does*
 
 PROGRAM is a python/c++/c/html/ipython notebook which makes/solve/consists
@@ -7,44 +8,88 @@ what is a goal
 input
 output 
 
-## General Prerequisites (for running and building)
+### Structure of the Project
 
-* [Anaconda](https://www.anaconda.com/products/individual)
-* [GitHub](https://github.com)
-* library-n.version 5
-* some other library
+**Folders:**
 
-## To build
+[**titanic**](https://github.com/rolandina/titanic/tree/master/titanic) it is a module with two classes Data and Model both used data set Titanic. Class Model will be used in FastApi: 
 
-NAME PROGRAM can be build on win/mac/linux
-Instruction how to build
+- [data.py](https://github.com/rolandina/titanic/blob/master/titanic/data.py) - file with class Data
+- [model.py](https://github.com/rolandina/titanic/blob/master/titanic/model.py) - file with class Model 
+  
+[**api**](https://github.com/rolandina/titanic/tree/master/api) it is a folder with api realisation will be used to create image file with Docker:   
 
-## To run (for development or testing)
+- [api](https://github.com/rolandina/titanic/blob/master/api/api.py)
+  
+[**front-end**](https://github.com/rolandina/titanic/tree/master/front-end) folder with files for creating responsive site:  
+
+- [index.html](https://github.com/rolandina/titanic/blob/master/front-end/index.html) - static site stucture   
+- [script.js](https://github.com/rolandina/titanic/blob/master/front-end/script.js) - jquery script for api integration   
+- [style.css](https://github.com/rolandina/titanic/blob/master/front-end/style.css) - css file with the style of the site
+
+[**notebooks**](https://github.com/rolandina/titanic/tree/master/notebooks) folder with the notebook for testing model and api:
+
+* [frontend.ipynb](https://github.com/rolandina/titanic/blob/master/notebooks/frontend.ipynb) - notebook to test fast api   
+* [model.ipynb](https://github.com/rolandina/titanic/blob/master/notebooks/model.ipynb) - notebook where we test the model
+
+**Docker files**:
+
+* [Dockerefile](https://github.com/rolandina/titanic/blob/master/Dockerfile)
+* [docker-compose.yml](https://github.com/rolandina/titanic/blob/master/docker-compose.yml)
+* [gunicorn_config.py](https://github.com/rolandina/titanic/blob/master/gunicorn_config.py)
+
+**Other files**:
+
+* [.gitignore](https://github.com/rolandina/titanic/blob/master/.gitignore)
+* [README.md](https://github.com/rolandina/titanic/blob/master/README.md) current markdwoen ReadMe file
+* [requirements.txt](https://github.com/rolandina/titanic/blob/master/requirements.txt)
+* [Makefile](https://github.com/rolandina/titanic/blob/master/Makefile)
+  
+* [setup.py](https://github.com/rolandina/titanic/blob/master/setup.py) setup file to build pip project to use package on local machine.
+To install package simply run `pip install .` from the root directory of the project.   
+
+## Clone this repository and install package
 
 ```
-# Clone this repository 
-git clone http://github.com/rolandina
-# Go into the directory
-cd dirname
-# python run.py
+git clone https://github.com/rolandina/titanic.git
+cd titanic
+pip install .
 ```
 
-To create image titanic-fastapi
+## Create Docker image and deploy api on Azure
 
 ```docker
+#create docker image
 docker-compose build
+
+#access to the azure registry
+docker login titanicfastapi.azurecr.io/titanicfastapi
+#---> enter the password
+docker push titanicfastapi.azurecr.io/titanicfastapi
 ```
 
-
-To run container on laptop
-```docker
-docker run -d --name titanic-fastapi -p 8080:8000 titanic-fastapi
-```
-adress - 0.0.0.0:8080
+To run container with fast api on the laptop:
+`docker run -d --name titanic-fastapi -p 8080:8000 titanicfastapi.azurecr.io/titanicfastapi`
+address on local host to access fast api titanic after running docker container `0.0.0.0:8080`
 
 
 ## Contributing
 
-This project was built on another project/[framework](framework link)
-If you have any questions, please reach me at 
-[License](www.lisense.com)
+To create this project we used several libraries and services:
+To run fast api we used:
+
+* [FastApi](https://fastapi.tiangolo.com/)
+* [gunicorn](https://gunicorn.org/)
+* [Docker](https://www.docker.com/)
+  
+To deploy fast api on cloud we used [Azure Portal](https://portal.azure.com/#home).
+
+To create a responsive site we used [jQuery](https://gunicorn.org/).
+
+## Contacts
+If you have any questions you are welcome to contact us:
+
+* [rolandina](https://github.com/rolandina)
+* [hugofgry](https://github.com/hugofgry) 
+* [AhmadNawzadi](https://github.com/AhmadNawzadi)
+
